@@ -1,0 +1,23 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using TravelGuideCore.Domain.FromPointModels;
+
+namespace TravelGuideDbPart.Db.Configurations;
+
+public sealed class FromPointModelConfiguration : IEntityTypeConfiguration<FromPointModel>
+{
+    public const int NameLength = 100;
+
+    public void Configure(EntityTypeBuilder<FromPointModel> builder)
+    {
+        const string tableName = "FromPoints";
+        builder.ToTable(tableName);
+
+        builder.HasKey(e => e.FromPointId);
+        builder.HasIndex(e => e.Name).IsUnique();
+
+        builder.Property(e => e.Name).HasMaxLength(NameLength);
+
+        builder.HasOne(d => d.LocationNavigation).WithMany().HasForeignKey(d => d.LocationId);
+    }
+}
