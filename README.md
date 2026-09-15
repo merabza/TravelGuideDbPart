@@ -6,7 +6,7 @@ EF Core persistence of [TravelGuide](https://github.com/merabza/TravelGuide): `T
 |---|---|
 | `TravelGuideDbPart.Db` | `TravelGuideDbContext` and `IEntityTypeConfiguration<T>` classes (`Configurations` folder) |
 
-EF Core migrations live in the [TravelGuide](https://github.com/merabza/TravelGuide) repository (`TravelGuideDbMigration` project).
+EF Core migrations live in the [TravelGuideDbTools](https://github.com/merabza/TravelGuideDbTools) repository (`TravelGuideDbTools.DbMigration` project).
 
 ## Repository layout — sibling repos are required
 
